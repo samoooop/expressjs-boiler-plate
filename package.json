@@ -1,0 +1,40 @@
+{
+  "name": "tracking-service",
+  "version": "1.0.0",
+  "description": "Backend service for vehicle tracking system.",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "dev": "node dist/index.js",
+    "dev-watch": "concurrently \"npm run build-watch\"  \"npm run watch\"",
+    "production": "node dist/index.js",
+    "watch": "nodemon dist/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samoooop/sevenpeak-tracking-service.git"
+  },
+  "author": "Trairat Punyawatthananukool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samoooop/sevenpeak-tracking-service/issues"
+  },
+  "homepage": "https://github.com/samoooop/sevenpeak-tracking-service#readme",
+  "dependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.10",
+    "config": "^3.3.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.37",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3"
+  },
+  "nodemonConfig": {
+    "watch": "dist",
+    "delay": 200
+  }
+}
