@@ -6,10 +6,10 @@
   "scripts": {
     "build": "tsc",
     "build-watch": "tsc -w",
-    "dev": "node dist/index.js",
+    "dev": "node dist/src/index.js",
     "dev-watch": "concurrently \"npm run build-watch\"  \"npm run watch\"",
-    "production": "node dist/index.js",
-    "watch": "nodemon dist/index.js",
+    "production": "node dist/src/index.js",
+    "watch": "nodemon dist/src/index.js",
     "test": "jest"
   },
   "repository": {
