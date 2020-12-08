@@ -15,7 +15,7 @@ const echoHandler: RequestHandler<{ message: string }, { echo: string }> = async
     }
 }
 
-const echoHandler2: RequestHandler<{ message: string }, { echo: string }> = async (body) => {
+const echoHandler2: RequestHandler<{ message: string }, { echo: string }> = async () => {
     throw new HttpError(501, 'NOT_IMPLEMENTED', { message: "sorry, not implemented." });
 }
 
