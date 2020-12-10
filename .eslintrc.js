@@ -1,17 +1,17 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    plugins: [
-        '@typescript-eslint',
-    ],
+    plugins: ['@typescript-eslint'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-    ],
-    includes: [
-        'src/**/*'
+        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended',
     ],
     rules: {
-        quotes: [2, 'single', { 'avoidEscape': true }]
+        quotes: ['warn', 'single', { avoidEscape: true }],
+        'comma-dangle': ['warn', 'always-multiline'],
+        semi: ['warn', 'always'],
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
 };
