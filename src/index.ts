@@ -2,6 +2,7 @@ import cluster from 'cluster';
 import config from 'config';
 import os from 'os';
 import { app } from './app';
+import 'source-map-support/register'
 
 const PORT = config.get('port');
 const isProduction = process.env.NODE_ENV === 'production';

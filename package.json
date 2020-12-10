@@ -6,10 +6,10 @@
   "scripts": {
     "build": "tsc",
     "build-watch": "tsc -w",
-    "dev": "node dist/src/index.js",
-    "dev-watch": "concurrently \"npm run build-watch\"  \"npm run watch\"",
+    "dev": "node --inspect=0 dist/src/index.js",
+    "dev-watch": "concurrently \"npm run build-watch\"  \"npm run src-watch\"",
     "production": "node dist/src/index.js",
-    "watch": "nodemon dist/src/index.js",
+    "src-watch": "nodemon node --inspect=0 dist/src/index.js",
     "test": "jest"
   },
   "repository": {
@@ -28,7 +28,8 @@
     "config": "^3.3.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "joi": "^17.3.0"
+    "joi": "^17.3.0",
+    "source-map-support": "^0.5.19"
   },
   "devDependencies": {
     "@types/config": "0.0.37",
