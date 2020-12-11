@@ -1,6 +1,6 @@
 module.exports = {
     verbose: true,
     rootDir: './',
-    testPathIgnorePatterns: ["node_modules", "dist"],
-    testMatch: ["**/test/**/*.test.ts"],
+    testPathIgnorePatterns: ["node_modules"],
+    testMatch: ["**/test/**/*.test.js"],
 };
