@@ -3,10 +3,7 @@ import Joi from 'joi';
 
 import { HttpError } from './error';
 
-export const handlerFactory = <REQ, RES>(
-    handler: RequestHandler<REQ, RES>,
-    schema: Joi.Schema,
-) => {
+export const handlerFactory = <REQ, RES>(handler: RequestHandler<REQ, RES>, schema: Joi.Schema) => {
     return async (req: express.Request, res: express.Response): Promise<void> => {
         try {
             const query = req.query;
@@ -15,7 +12,9 @@ export const handlerFactory = <REQ, RES>(
             const { error, value } = schema.validate(request);
             const validatedRequest: REQ = value;
             if (error) {
-                throw new HttpError(400, 'BAD_REQUEST');
+                throw new HttpError(400, 'BAD_REQUEST', {
+                    ...error,
+                });
             }
             const result = await handler(validatedRequest, req);
             res.status(200).json(result);
