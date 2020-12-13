@@ -1,5 +1,5 @@
 # Expressjs boiler plate
-React boilder plate using typescript and parcel-bundler.
+Expressjs boiler plate using typescript.
 ## Usage 
 1. Run `npm install` to install dependencies.
 2. Run in the server watch mode with `npm run dev-watch` (auto restart on file changes).
